@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-wrapper {
+  display: flex;
+  justify-content: center;
+  column-gap: 30px;
+  margin-top: 20px;
+}
+
+#registrationForm, .info {
+  background-color: #fff;
+  padding: 20px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 300px;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+}
+
+label {
+  display: block;
+  margin-bottom: 15px;
+  color: #555;
+}
+
+label input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+label input:focus {
+  border-color: #4a90e2;
+  outline: none;
+}
+
+label input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset; 
+  box-shadow: 0 0 0px 1000px #fff inset;
+}
+
+.error {
+  color: red;
+}
+
+.error input {
+  border: 1px solid red;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #4a90e2;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #357abd;
+}
+
+#colorPicker {
+  display: block;
+  margin: 30px auto;
+  min-width: 300px;
+  min-height: 50px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 50%;
+  margin: 0 auto 20px;
+}
+td {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border: 1px solid #333;
+  font-size: 20px;
+  cursor: pointer;
+}
