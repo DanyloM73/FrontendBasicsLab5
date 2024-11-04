@@ -32,7 +32,11 @@ const validateField = ({ element, pattern, errorMessage, additionalCheck, pastDa
 };
 
 document.querySelector('button').addEventListener('click', () => {
-  const isValid = fields.every(validateField);
+  let isValid = true;
+  fields.forEach(field => {
+    const fieldIsValid = validateField(field);
+    if (!fieldIsValid) isValid = false;
+  });
 
   if (isValid) {
     document.querySelector('.output .info').innerHTML = fields.map(({ element }) =>
@@ -44,7 +48,7 @@ document.querySelector('button').addEventListener('click', () => {
 const table = document.getElementById('table');
 const colorPicker = document.getElementById('colorPicker');
 
-function generateTable() {
+const generateTable = () => {
   let counter = 1;
   for (let i = 0; i < 6; i++) {
     const row = document.createElement('tr');
@@ -74,7 +78,7 @@ function generateTable() {
   }
 }
 
-function getRandomColor() {
+const getRandomColor = () => {
   const letters = '0123456789ABCDEF';
   let color = '#';
   for (let i = 0; i < 6; i++) {
@@ -83,7 +87,7 @@ function getRandomColor() {
   return color;
 }
 
-function changeDiagonalColor() {
+const changeDiagonalColor = () => {
   const cellsColor = getRandomColor();
   for (let i = 0; i < 6; i++) {
     const cell = table.rows[i].cells[5 - i];
